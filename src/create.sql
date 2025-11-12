@@ -60,3 +60,23 @@ CREATE TABLE Advisor (
   ContactNumber   VARCHAR(11)   NOT NULL
 );
 
+-- Create table `Enrollment`.
+CREATE TABLE Enrollment (
+  ID                INT             PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  AcademicSession   VARCHAR(10)     NOT NULL,
+  RegistrationDate  DATE            NOT NULL,
+  CGPA              DECIMAL(10, 2)  NOT NULL,
+  FinalGrade        INT             NULL,
+
+  StaffID           INT             NOT NULL,
+  FOREIGN KEY FK_Advisor_StaffID(StaffID)
+    REFERENCES Advisor(StaffID),
+
+  MatricNumber      INT             NOT NULL,
+  FOREIGN KEY FK_Student_MatricNumber(MatricNumber)
+    REFERENCES Student(MatricNumber),
+
+  CourseCode        VARCHAR(10)     NOT NULL,
+  FOREIGN KEY FK_Course_CourseCode(CourseCode)
+    REFERENCES Course(CourseCode)
+);
