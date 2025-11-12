@@ -51,6 +51,15 @@ CREATE TABLE Student (
     REFERENCES Programme(ProgrammeCode)
 );
 
+-- Create table `Staff` to be the superclass of `Advisor` and `Coordinator`.
+CREATE TABLE Staff (
+  StaffID         INT           PRIMARY KEY NOT NULL,
+  Name            VARCHAR(20)   NOT NULL,
+  ContactNumber   VARCHAR(11)   NOT NULL,
+  Department      VARCHAR(50)   NOT NULL,
+  OfficeLocation  VARCHAR(100)  NOT NULL
+);
+
 -- Create table `Advisor`.
 CREATE TABLE Advisor (
   StaffID         INT           PRIMARY KEY NOT NULL,
