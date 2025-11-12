@@ -1,3 +1,5 @@
+# Database Assignment
+
 ## Introduction
 
 This repository stores source code of database assignment.
@@ -39,3 +41,7 @@ just stop
 ### Create Database and Tables
 
 Run the `src/create.sql` with `MySQL` server.
+
+```sql
+SOURCE ./src/create.sql
+```
