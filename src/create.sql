@@ -72,6 +72,18 @@ CREATE TABLE Advisor (
     REFERENCES Student(MatricNumber)
 );
 
+-- Create table `Coordinator`.
+CREATE TABLE Coordinator (
+  StaffID         INT           PRIMARY KEY NOT NULL,
+  FOREIGN KEY FK_Staff_StaffID(StaffID)
+    REFERENCES Staff(StaffID),
+
+  -- Avoid duplicated assignments.
+  ProgrammeCode   VARCHAR(10)   NOT NULL UNIQUE,
+  FOREIGN KEY FK_Programme_ProgrammeCode(ProgrammeCode)
+    REFERENCES Programme(ProgrammeCode)
+);
+
 -- Create table `Enrollment`.
 CREATE TABLE Enrollment (
   ID                INT             PRIMARY KEY NOT NULL AUTO_INCREMENT,
