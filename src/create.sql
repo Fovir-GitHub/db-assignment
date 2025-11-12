@@ -62,11 +62,14 @@ CREATE TABLE Staff (
 
 -- Create table `Advisor`.
 CREATE TABLE Advisor (
-  StaffID         INT           PRIMARY KEY NOT NULL,
-  Name            VARCHAR(20)   NOT NULL,
-  Department      VARCHAR(50)   NOT NULL,
-  OfficeLocation  VARCHAR(100)  NOT NULL,
-  ContactNumber   VARCHAR(11)   NOT NULL
+  StaffID       INT   PRIMARY KEY NOT NULL,
+  FOREIGN KEY FK_Staff_StaffID(StaffID)
+    REFERENCES Staff(StaffID),
+
+  -- Set to unique to avoid duplicated assignments.
+  MatricNumber  INT   NOT NULL UNIQUE,
+  FOREIGN KEY FK_Student_MatricNumber(MatricNumber)
+    REFERENCES Student(MatricNumber)
 );
 
 -- Create table `Enrollment`.
