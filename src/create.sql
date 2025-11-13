@@ -4,7 +4,7 @@ DROP DATABASE IF EXISTS student_course;
 CREATE DATABASE student_course;
 USE student_course;
 
--- Create table `Course`.
+-- Create table `course`.
 CREATE TABLE course (
   course_code VARCHAR(10) PRIMARY KEY NOT NULL,
   title       VARCHAR(50) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE course (
   semester    INT         NOT NULL
 );
 
--- Create table `Programme`.
+-- Create table `programme`.
 -- TODO:
 --  1. Check the data type of `Duration`.
 --  2. Set `Coordinator` as a foreign key.
@@ -33,7 +33,7 @@ CREATE TABLE programme (
   UNIQUE(programme_code, course_code)
 );
 
--- Create table `Student`.
+-- Create table `student`.
 CREATE TABLE student (
   matric_number   INT             PRIMARY KEY NOT NULL,
   firstname       VARCHAR(15)     NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE student (
     REFERENCES programme(programme_code)
 );
 
--- Create table `Staff` to be the superclass of `Advisor` and `Coordinator`.
+-- Create table `staff` to be the superclass of `advisor` and `coordinator`.
 CREATE TABLE staff (
   staff_id          INT           PRIMARY KEY NOT NULL,
   name              VARCHAR(20)   NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE staff (
   office_location   VARCHAR(100)  NOT NULL
 );
 
--- Create table `Advisor`.
+-- Create table `advisor`.
 CREATE TABLE advisor (
   staff_id        INT   PRIMARY KEY NOT NULL,
   FOREIGN KEY fk_staff_staff_id(staff_id)
@@ -72,7 +72,7 @@ CREATE TABLE advisor (
     REFERENCES student(matric_number)
 );
 
--- Create table `Coordinator`.
+-- Create table `coordinator`.
 CREATE TABLE coordinator (
   staff_id          INT           PRIMARY KEY NOT NULL,
   FOREIGN KEY fk_staff_staff_id(staff_id)
@@ -84,7 +84,7 @@ CREATE TABLE coordinator (
     REFERENCES programme(programme_code)
 );
 
--- Create table `Enrollment`.
+-- Create table `enrollment`.
 CREATE TABLE enrollment (
   id                  INT             PRIMARY KEY NOT NULL AUTO_INCREMENT,
   academic_session    VARCHAR(10)     NOT NULL,
