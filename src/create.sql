@@ -50,6 +50,13 @@ CREATE TABLE course (
     REFERENCES programme(programme_code)
 );
 
+-- Create table `advisor`.
+CREATE TABLE advisor (
+  staff_id        INT   PRIMARY KEY NOT NULL,
+  FOREIGN KEY fk_staff_staff_id(staff_id)
+    REFERENCES staff(staff_id)
+);
+
 -- Create table `student`.
 CREATE TABLE student (
   matric_number   INT             PRIMARY KEY NOT NULL,
@@ -65,19 +72,11 @@ CREATE TABLE student (
 
   programme_code  VARCHAR(10)     NOT NULL,
   FOREIGN KEY fk_programme_programme_code(programme_code)
-    REFERENCES programme(programme_code)
-);
+    REFERENCES programme(programme_code),
 
--- Create table `advisor`.
-CREATE TABLE advisor (
-  staff_id        INT   PRIMARY KEY NOT NULL,
-  FOREIGN KEY fk_staff_staff_id(staff_id)
-    REFERENCES staff(staff_id),
-
-  -- Set to unique to avoid duplicated assignments.
-  matric_number   INT   NOT NULL UNIQUE,
-  FOREIGN KEY fk_student_matric_number(matric_number)
-    REFERENCES student(matric_number)
+  advisor_id      INT             NOT NULL,
+  FOREIGN KEY fk_advisor_staff_id(advisor_id)
+    REFERENCES advisor(staff_id)
 );
 
 -- Create table `enrollment`.
