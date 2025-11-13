@@ -19,7 +19,7 @@ CREATE TABLE staff (
 
   contact_number    VARCHAR(11)   NOT NULL,
   department        VARCHAR(50)   NOT NULL,
-  office_location   VARCHAR(100)  NOT NULL
+  office_location   VARCHAR(100)  NULL
 );
 
 -- Create table `coordinator`.
