@@ -74,14 +74,12 @@ CREATE TABLE advisor (
 
 -- Create table `coordinator`.
 CREATE TABLE coordinator (
-  staff_id          INT           PRIMARY KEY NOT NULL,
+  staff_id      INT         PRIMARY KEY NOT NULL,
   FOREIGN KEY fk_staff_staff_id(staff_id)
     REFERENCES staff(staff_id),
 
-  -- Avoid duplicated assignments.
-  programme_code    VARCHAR(10)   NOT NULL UNIQUE,
-  FOREIGN KEY fk_programme_programme_code(programme_code)
-    REFERENCES programme(programme_code)
+  start_year    INT         NOT NULL,
+  qualification VARCHAR(20) NOT NULL
 );
 
 -- Create table `enrollment`.
