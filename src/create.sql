@@ -75,7 +75,7 @@ CREATE TABLE student (
   birth_date      DATE            NOT NULL,
   home_street     VARCHAR(30)     NOT NULL,
   home_city       VARCHAR(15)     NOT NULL,
-  home_postcode   INT             NOT NULL,
+  home_postcode   VARCHAR(10)     NOT NULL,
   current_cgpa    DECIMAL(10, 2)  DEFAULT 0,
   status          VARCHAR(10)     NOT NULL,
   level           VARCHAR(10)     NOT NULL,
