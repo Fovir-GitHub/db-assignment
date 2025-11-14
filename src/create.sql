@@ -108,11 +108,11 @@ CREATE TABLE enrollment (
 );
 
 -- Create table `fee`.
--- TODO: Check the data type of `total_fee` and design discount based on grade.
+-- TODO: Design discount based on grade.
 CREATE TABLE fee (
-  student_id  VARCHAR(16)   PRIMARY KEY NOT NULL,
+  student_id  VARCHAR(16)     PRIMARY KEY NOT NULL,
   FOREIGN KEY fk_student_student_id(student_id)
     REFERENCES student(student_id),
 
-  total_fee   INT           NOT NULL DEFAULT 0
+  total_fee   DECIMAL(10, 2)  NOT NULL DEFAULT 0
 );
