@@ -108,3 +108,13 @@ CREATE TABLE enrollment (
   FOREIGN KEY fk_course_course_code(course_code)
     REFERENCES course(course_code)
 );
+
+-- Create table `fee`.
+-- TODO: Check the data type of `total_fee` and design discount based on grade.
+CREATE TABLE fee (
+  student_id  VARCHAR(16)   PRIMARY KEY NOT NULL,
+  FOREIGN KEY fk_student_student_id(student_id)
+    REFERENCES student(student_id),
+
+  total_fee   INT           NOT NULL DEFAULT 0
+);
