@@ -27,12 +27,12 @@ CREATE TABLE staff (
 
 -- Create table `coordinator`.
 CREATE TABLE coordinator (
-  staff_id      VARCHAR(16)   PRIMARY KEY NOT NULL,
-  FOREIGN KEY fk_staff_staff_id(staff_id)
+  coordinator_id    VARCHAR(16)   PRIMARY KEY NOT NULL,
+  FOREIGN KEY fk_staff_staff_id(coordinator_id)
     REFERENCES staff(staff_id),
 
-  start_year    INT         NOT NULL,
-  qualification VARCHAR(50) NOT NULL
+  start_year        INT         NOT NULL,
+  qualification     VARCHAR(50) NOT NULL
 );
 
 -- Create table `programme`.
@@ -43,8 +43,8 @@ CREATE TABLE programme (
   duration        INT           NOT NULL DEFAULT 4,
 
   coordinator_id  VARCHAR(16)   NOT NULL,
-  FOREIGN KEY fk_coordinator_staff_id(coordinator_id)
-    REFERENCES coordinator(staff_id)
+  FOREIGN KEY fk_coordinator_coordinator_id(coordinator_id)
+    REFERENCES coordinator(coordinator_id)
 );
 
 -- Create table `course`.
@@ -61,9 +61,9 @@ CREATE TABLE course (
 
 -- Create table `advisor`.
 CREATE TABLE advisor (
-  staff_id  VARCHAR(16)   PRIMARY KEY NOT NULL,
-  FOREIGN KEY fk_staff_staff_id(staff_id)
-    REFERENCES staff(staff_id)
+  advisor_id  VARCHAR(16)   PRIMARY KEY NOT NULL,
+  FOREIGN KEY fk_staff_staff_id(advisor_id)
+    REFERENCES staff(advisor_id)
 );
 
 -- Create table `student`.
@@ -87,8 +87,8 @@ CREATE TABLE student (
     REFERENCES programme(programme_code),
 
   advisor_id      VARCHAR(15)     NOT NULL,
-  FOREIGN KEY fk_advisor_staff_id(advisor_id)
-    REFERENCES advisor(staff_id)
+  FOREIGN KEY fk_advisor_advisor_id(advisor_id)
+    REFERENCES advisor(advisor_id)
 );
 
 -- Create table `enrollment`.
@@ -99,9 +99,9 @@ CREATE TABLE enrollment (
   cgpa                DECIMAL(10, 2)  NOT NULL,
   final_grade         VARCHAR(3)      NULL,
 
-  staff_id            VARCHAR(16)     NOT NULL,
-  FOREIGN KEY fk_advisor_staff_id(staff_id)
-    REFERENCES advisor(staff_id),
+  advisor_id          VARCHAR(16)     NOT NULL,
+  FOREIGN KEY fk_advisor_advisor_id(advisor_id)
+    REFERENCES advisor(advisor_id),
 
   student_id          VARCHAR(16)     NOT NULL,
   FOREIGN KEY fk_student_student_id(student_id)
