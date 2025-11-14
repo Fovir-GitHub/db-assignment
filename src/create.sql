@@ -92,7 +92,7 @@ CREATE TABLE enrollment (
   academic_session    VARCHAR(10)     NOT NULL,
   registration_date   DATE            NOT NULL,
   cgpa                DECIMAL(10, 2)  NOT NULL,
-  final_grade         INT             NULL,
+  final_grade         VARCHAR(3)      NULL,
 
   staff_id            VARCHAR(16)     NOT NULL,
   FOREIGN KEY fk_advisor_staff_id(staff_id)
