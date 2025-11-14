@@ -31,11 +31,12 @@ CREATE TABLE coordinator (
   FOREIGN KEY fk_staff_staff_id(coordinator_id)
     REFERENCES staff(staff_id),
 
-  start_year        INT         NOT NULL,
+  start_year        INT         NOT NULL, -- In YYYY format.
   qualification     VARCHAR(50) NOT NULL
 );
 
 -- Create table `programme`.
+-- `programme_code` -- Abbreviation of programme name like `CYS`, `CST`, etc.
 CREATE TABLE programme (
   programme_code  VARCHAR(10)   PRIMARY KEY NOT NULL,
   name            VARCHAR(50)   NOT NULL,
@@ -48,6 +49,8 @@ CREATE TABLE programme (
 );
 
 -- Create table `course`.
+-- `course_code` -- `programme_code + year + incremental ID with a leading 0`.
+--                e.g. `CYS101`, `CST213`, etc.
 CREATE TABLE course (
   course_code     VARCHAR(10) PRIMARY KEY NOT NULL,
   title           VARCHAR(50) NOT NULL,
@@ -68,7 +71,9 @@ CREATE TABLE advisor (
 
 -- Create table `student`.
 -- `student_id` -- `programme code + intake year + academic session + incremental ID`.
---              -- e.g. `CYS2809001`, `CYS2704010`, etc.
+--              e.g. `CYS2809001`, `CYS2704010`, etc.
+-- `status` -- One of `active`, `deferred`, or `graduated`.
+-- `level` -- `Year 1`, `Year 2`, etc.
 CREATE TABLE student (
   student_id      VARCHAR(16)     PRIMARY KEY NOT NULL,
   FOREIGN KEY fk_person_id(student_id)
@@ -77,6 +82,8 @@ CREATE TABLE student (
   birth_date      DATE            NOT NULL,
   home_street     VARCHAR(30)     NOT NULL,
   home_city       VARCHAR(15)     NOT NULL,
+
+  -- Use `VARCHAR` to avoid leading 0 problems.
   home_postcode   VARCHAR(10)     NOT NULL,
   current_cgpa    DECIMAL(10, 2)  DEFAULT 0,
   status          VARCHAR(10)     NOT NULL,
@@ -92,6 +99,8 @@ CREATE TABLE student (
 );
 
 -- Create table `enrollment`.
+-- `academic_session` -- `year + intake month` like `2024/09`, `2025/02`, etc.
+-- `final_grade` -- `A`, `B+`, `B`, etc.
 CREATE TABLE enrollment (
   id                  INT             PRIMARY KEY NOT NULL AUTO_INCREMENT,
   academic_session    VARCHAR(10)     NOT NULL,
@@ -113,7 +122,9 @@ CREATE TABLE enrollment (
 );
 
 -- Create table `fee`.
--- TODO: Design discount based on grade.
+-- TODO:
+--    - Design discount based on grade.
+--    - Add triggers to calculate total fee automatically.
 CREATE TABLE fee (
   student_id  VARCHAR(16)     PRIMARY KEY NOT NULL,
   FOREIGN KEY fk_student_student_id(student_id)
