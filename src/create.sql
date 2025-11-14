@@ -45,7 +45,6 @@ CREATE TABLE programme (
 );
 
 -- Create table `course`.
--- TODO: Check the data type of `semester`.
 CREATE TABLE course (
   course_code     VARCHAR(10) PRIMARY KEY NOT NULL,
   title           VARCHAR(50) NOT NULL,
