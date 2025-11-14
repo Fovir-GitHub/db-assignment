@@ -31,8 +31,8 @@ CREATE TABLE coordinator (
   FOREIGN KEY fk_staff_staff_id(coordinator_id)
     REFERENCES staff(staff_id),
 
-  start_year        INT         NOT NULL, -- In YYYY format.
-  qualification     VARCHAR(50) NOT NULL
+  start_year        INT           NOT NULL, -- In YYYY format.
+  qualification     VARCHAR(50)   NOT NULL
 );
 
 -- Create table `programme`.
@@ -57,7 +57,7 @@ CREATE TABLE course (
   credit_hour     INT         NOT NULL,
   semester        INT         NOT NULL,
 
-  programme_code  VARCHAR(10)   NOT NULL,
+  programme_code  VARCHAR(10) NOT NULL,
   FOREIGN KEY fk_programme_programme_code(programme_code)
     REFERENCES programme(programme_code)
 );
