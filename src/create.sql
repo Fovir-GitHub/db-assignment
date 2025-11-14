@@ -1,5 +1,6 @@
 -- TODO:
 --  - Change the relation between `course` and `programme` to many-to-many.
+--  - Add triggers to calculate total fee automatically.
 
 -- Create and switch to the database
 -- after dropping the existed one.
@@ -127,7 +128,6 @@ CREATE TABLE enrollment (
 -- Create table `fee`.
 -- TODO:
 --    - Design discount based on grade.
---    - Add triggers to calculate total fee automatically.
 CREATE TABLE fee (
   student_id  VARCHAR(16)     PRIMARY KEY NOT NULL,
   FOREIGN KEY fk_student_student_id(student_id)
