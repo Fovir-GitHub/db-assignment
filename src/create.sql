@@ -1,3 +1,6 @@
+-- TODO:
+--  - Change the relation between `course` and `programme` to many-to-many.
+
 -- Create and switch to the database
 -- after dropping the existed one.
 DROP DATABASE IF EXISTS enrollment_system;
