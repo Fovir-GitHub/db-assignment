@@ -62,7 +62,8 @@ CREATE TABLE course (
 -- Create table `advisor`.
 CREATE TABLE advisor (
   staff_id  VARCHAR(16)   PRIMARY KEY NOT NULL,
-  FOREIGN KEY fk_staff_staff_id(staff_id) REFERENCES staff(staff_id)
+  FOREIGN KEY fk_staff_staff_id(staff_id)
+    REFERENCES staff(staff_id)
 );
 
 -- Create table `student`.
