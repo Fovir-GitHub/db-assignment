@@ -142,3 +142,23 @@ CREATE TABLE fee (
 
   total_fee   DECIMAL(10, 2)  NOT NULL DEFAULT 0
 );
+
+DELIMITER $$
+
+CREATE TRIGGER calculate_fee
+AFTER INSERT ON enrollment
+FOR EACH ROW
+BEGIN
+  INSERT INTO fee (student_id, total_fee)
+  VALUES (NEW.student_id, 0)
+  ON DUPLICATE KEY UPDATE total_fee = total_fee;
+
+  UPDATE fee SET total_fee =
+    (SELECT (SUM(c.credit_hour) * 300) FROM enrollment AS e
+      INNER JOIN course AS c ON e.course_code = c.course_code
+      INNER JOIN student AS s ON s.student_id = e.student_id
+      WHERE s.student_id = NEW.student_id)
+    WHERE NEW.student_id = student_id;
+END$$
+
+DELIMITER ;
