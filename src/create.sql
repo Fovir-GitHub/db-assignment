@@ -145,7 +145,7 @@ CREATE TABLE fee (
 
 DELIMITER $$
 
-CREATE TRIGGER calculate_fee
+CREATE TRIGGER calculate_fee_after_insert
 AFTER INSERT ON enrollment
 FOR EACH ROW
 BEGIN
@@ -159,6 +159,32 @@ BEGIN
       INNER JOIN student AS s ON s.student_id = e.student_id
       WHERE s.student_id = NEW.student_id)
     WHERE NEW.student_id = student_id;
+END$$
+
+CREATE TRIGGER calculate_fee_after_update
+AFTER UPDATE ON enrollment
+FOR EACH ROW
+BEGIN
+  UPDATE fee SET total_fee =
+    (SELECT (SUM(c.credit_hour) * 300) FROM enrollment AS e
+      INNER JOIN course AS c ON e.course_code = c.course_code
+      INNER JOIN student AS s ON s.student_id = e.student_id
+      WHERE s.student_id = NEW.student_id)
+    WHERE NEW.student_id = student_id;
+END$$
+
+CREATE TRIGGER calculate_fee_after_delete
+AFTER DELETE ON enrollment
+FOR EACH ROW
+BEGIN
+  UPDATE fee SET total_fee =
+    COALESCE(
+      (SELECT (SUM(c.credit_hour) * 300) FROM enrollment AS e
+      INNER JOIN course AS c ON e.course_code = c.course_code
+      INNER JOIN student AS s ON s.student_id = e.student_id
+      WHERE s.student_id = OLD.student_id), 0
+    )
+    WHERE OLD.student_id = student_id;
 END$$
 
 DELIMITER ;
