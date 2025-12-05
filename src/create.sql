@@ -1,5 +1,5 @@
 -- TODO:
---  - Add triggers to calculate total fee automatically.
+--  - Refactor the structure of database.
 
 -- Create and switch to the database
 -- after dropping the existed one.
