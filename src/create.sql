@@ -113,7 +113,6 @@ CREATE TABLE student (
 -- `academic_session` -- `year + intake month` like `2024/09`, `2025/02`, etc.
 -- `final_grade` -- `A`, `B+`, `B`, etc.
 CREATE TABLE enrollment (
-  id                  INT             PRIMARY KEY NOT NULL AUTO_INCREMENT,
   academic_session    VARCHAR(10)     NOT NULL,
   registration_date   DATE            NOT NULL,
   cgpa                DECIMAL(10, 2)  NOT NULL,
@@ -129,7 +128,9 @@ CREATE TABLE enrollment (
 
   course_code         VARCHAR(10)     NOT NULL,
   FOREIGN KEY fk_course_course_code(course_code)
-    REFERENCES course(course_code)
+    REFERENCES course(course_code),
+
+  PRIMARY KEY (student_id, course_code, academic_session)
 );
 
 -- Create table `fee`.
