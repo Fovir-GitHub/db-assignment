@@ -145,6 +145,7 @@ CREATE TABLE fee (
 
 DELIMITER $$
 
+-- Calculate fee after insertion.
 CREATE TRIGGER calculate_fee_after_insert
 AFTER INSERT ON enrollment
 FOR EACH ROW
@@ -161,6 +162,7 @@ BEGIN
     WHERE NEW.student_id = student_id;
 END$$
 
+-- Calculate fee after updating.
 CREATE TRIGGER calculate_fee_after_update
 AFTER UPDATE ON enrollment
 FOR EACH ROW
@@ -173,6 +175,7 @@ BEGIN
     WHERE NEW.student_id = student_id;
 END$$
 
+-- Calculate fee after deletion.
 CREATE TRIGGER calculate_fee_after_delete
 AFTER DELETE ON enrollment
 FOR EACH ROW
