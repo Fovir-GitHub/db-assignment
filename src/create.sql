@@ -118,7 +118,7 @@ CREATE TABLE student (
 CREATE TABLE enrollment (
   academic_session    VARCHAR(10)     NOT NULL,
   registration_date   DATETIME        NOT NULL,
-  final_grade         VARCHAR(3)      NULL,
+  final_grade         CHAR(2)         NULL,
 
   student_id          VARCHAR(16)     NOT NULL,
   FOREIGN KEY fk_student_student_id(student_id)
