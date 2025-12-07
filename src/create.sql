@@ -104,10 +104,6 @@ CREATE TABLE enrollment (
   registration_date   DATE            NOT NULL,
   final_grade         VARCHAR(3)      NULL,
 
-  advisor_id          VARCHAR(16)     NOT NULL,
-  FOREIGN KEY fk_advisor_advisor_id(advisor_id)
-    REFERENCES advisor(advisor_id),
-
   student_id          VARCHAR(16)     NOT NULL,
   FOREIGN KEY fk_student_student_id(student_id)
     REFERENCES student(student_id),
