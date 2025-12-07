@@ -87,8 +87,8 @@ CREATE TABLE student (
     REFERENCES person(id),
 
   cgpa            DECIMAL(10, 2)  DEFAULT 0,
-  status          VARCHAR(10)     NOT NULL,
-  level           VARCHAR(10)     NOT NULL,
+  status          VARCHAR(10)     DEFAULT 'active',
+  level           VARCHAR(10)     DEFAULT 'Year 1',
 
   programme_code  VARCHAR(10)     NOT NULL,
   FOREIGN KEY fk_programme_programme_code(programme_code)
