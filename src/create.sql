@@ -63,7 +63,10 @@ CREATE TABLE course (
   course_code     VARCHAR(10) PRIMARY KEY NOT NULL,
   title           VARCHAR(50) NOT NULL,
   credit_hour     INT         NOT NULL,
-  semester        INT         NOT NULL
+  semester        INT         NOT NULL,
+  programme_code  VARCHAR(10) NOT NULL,
+  FOREIGN KEY fk_programme_programme_code(programme_code)
+    REFERENCES programme(programme_code)
 );
 
 -- Create table `advisor`.
