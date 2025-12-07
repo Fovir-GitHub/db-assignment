@@ -66,18 +66,6 @@ CREATE TABLE course (
   semester        INT         NOT NULL
 );
 
-CREATE TABLE programme_course (
-  programme_code  VARCHAR(10)   NOT NULL,
-  FOREIGN KEY fk_programme_programme_code(programme_code)
-    REFERENCES programme(programme_code),
-
-  course_code     VARCHAR(10)   NOT NULL,
-  FOREIGN KEY fk_course_course_code(course_code)
-    REFERENCES course(course_code),
-
-  PRIMARY KEY (programme_code, course_code)
-);
-
 -- Create table `advisor`.
 CREATE TABLE advisor (
   advisor_id  VARCHAR(16)   PRIMARY KEY NOT NULL,
