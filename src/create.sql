@@ -117,7 +117,7 @@ CREATE TABLE student (
 -- `final_grade` -- `A`, `B+`, `B`, etc.
 CREATE TABLE enrollment (
   academic_session    VARCHAR(10)     NOT NULL,
-  registration_date   DATE            NOT NULL,
+  registration_date   DATETIME        NOT NULL,
   final_grade         VARCHAR(3)      NULL,
 
   student_id          VARCHAR(16)     NOT NULL,
