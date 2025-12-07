@@ -83,7 +83,7 @@ CREATE TABLE student (
   FOREIGN KEY fk_person_id(student_id)
     REFERENCES person(id),
 
-  current_cgpa    DECIMAL(10, 2)  DEFAULT 0,
+  cgpa            DECIMAL(10, 2)  DEFAULT 0,
   status          VARCHAR(10)     NOT NULL,
   level           VARCHAR(10)     NOT NULL,
 
@@ -102,7 +102,6 @@ CREATE TABLE student (
 CREATE TABLE enrollment (
   academic_session    VARCHAR(10)     NOT NULL,
   registration_date   DATE            NOT NULL,
-  cgpa                DECIMAL(10, 2)  NOT NULL,
   final_grade         VARCHAR(3)      NULL,
 
   advisor_id          VARCHAR(16)     NOT NULL,
