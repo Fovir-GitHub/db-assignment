@@ -10,9 +10,15 @@ USE enrollment_system;
 -- Create table `person` to be the superclass of `student` and `staff`.
 -- The format of `id` is different between `student` and `staff`.
 CREATE TABLE person (
-  id          VARCHAR(16)     PRIMARY KEY NOT NULL,
-  firstname   VARCHAR(15)     NOT NULL,
-  lastname    VARCHAR(15)     NOT NULL
+  id              VARCHAR(16)     PRIMARY KEY NOT NULL,
+  firstname       VARCHAR(15)     NOT NULL,
+  lastname        VARCHAR(15)     NOT NULL,
+  birth_date      DATE            NULL,
+  home_street     VARCHAR(30)     NULL,
+  home_city       VARCHAR(15)     NULL,
+  -- Use `VARCHAR` to avoid leading 0 problems.
+  home_postcode   VARCHAR(10)     NULL,
+  contact_number  VARCHAR(11)     NULL
 );
 
 -- Create table `staff` to be the superclass of `advisor` and `coordinator`.
@@ -23,7 +29,6 @@ CREATE TABLE staff (
   FOREIGN KEY fk_person_id(staff_id)
     REFERENCES person(id),
 
-  contact_number    VARCHAR(11)   NOT NULL,
   department        VARCHAR(50)   NOT NULL,
   office_location   VARCHAR(100)  NULL
 );
@@ -90,12 +95,6 @@ CREATE TABLE student (
   FOREIGN KEY fk_person_id(student_id)
     REFERENCES person(id),
 
-  birth_date      DATE            NOT NULL,
-  home_street     VARCHAR(30)     NOT NULL,
-  home_city       VARCHAR(15)     NOT NULL,
-
-  -- Use `VARCHAR` to avoid leading 0 problems.
-  home_postcode   VARCHAR(10)     NOT NULL,
   current_cgpa    DECIMAL(10, 2)  DEFAULT 0,
   status          VARCHAR(10)     NOT NULL,
   level           VARCHAR(10)     NOT NULL,
