@@ -82,7 +82,7 @@ CREATE TABLE course_prerequisite (
     REFERENCES course(course_code),
 
   prerequisite_code VARCHAR(10)   NOT NULL,
-  FOREIGN KEY fk_course_course_code(prerequisite_code)
+  FOREIGN KEY fk_course_course_required(prerequisite_code)
     REFERENCES course(course_code),
 
   PRIMARY KEY (course_code, prerequisite_code)
