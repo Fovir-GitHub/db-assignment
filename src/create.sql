@@ -132,14 +132,17 @@ CREATE TABLE enrollment (
 );
 
 -- Create table `fee`.
--- TODO:
---    - Design discount based on grade.
 CREATE TABLE fee (
-  student_id  VARCHAR(16)     PRIMARY KEY NOT NULL,
+  invoice_id      INT             PRIMARY KEY AUTO_INCREMENT,
+  student_id      VARCHAR(16)     NOT NULL,
   FOREIGN KEY fk_student_student_id(student_id)
     REFERENCES student(student_id),
 
-  total_fee   DECIMAL(10, 2)  NOT NULL DEFAULT 0
+  total_credit    INT             NOT NULL DEFAULT 0,
+  total_fee       DECIMAL(10, 2)  NOT NULL DEFAULT 0,
+  discount        DECIMAL(10, 2)  NOT NULL DEFAULT 0,
+  semester        INT             NOT NULL,
+  payment_status  ENUM('Pending', 'Paid', 'Overdue')
 );
 
 DELIMITER $$
