@@ -108,6 +108,7 @@ CREATE TABLE student (
   cgpa            DECIMAL(10, 2)  DEFAULT 0,
   status          ENUM('active', 'deferred', 'graduated') DEFAULT 'active',
   level           VARCHAR(10)     DEFAULT 'Year 1',
+  CHECK (level REGEXP '^Year \d$'),
 
   programme_code  VARCHAR(10)     NOT NULL,
   FOREIGN KEY fk_programme_programme_code(programme_code)
