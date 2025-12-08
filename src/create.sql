@@ -156,7 +156,7 @@ CREATE TABLE fee (
   FOREIGN KEY fk_semester_year_month(semester_year, semester_month)
     REFERENCES semester(year, month),
 
-  payment_status  ENUM('Pending', 'Paid', 'Overdue'),
+  payment_status  ENUM('Pending', 'Paid', 'Overdue') NOT NULL DEFAULT 'Pending',
 
   PRIMARY KEY (student_id, semester_year, semester_month)
 );
