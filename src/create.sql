@@ -90,7 +90,7 @@ CREATE TABLE advisor (
 );
 
 -- Create table `student`.
--- `student_id` -- `programme code + intake year + academic session + incremental ID`.
+-- `student_id` -- `programme code + intake year + semester + incremental ID`.
 --              e.g. `CYS2809001`, `CYS2704010`, etc.
 -- `status` -- One of `active`, `deferred`, or `graduated`.
 -- `level` -- `Year 1`, `Year 2`, etc.
@@ -113,10 +113,10 @@ CREATE TABLE student (
 );
 
 -- Create table `enrollment`.
--- `academic_session` -- `year + intake month` like `2024/09`, `2025/02`, etc.
+-- `semester` -- `year + intake month` like `2024/09`, `2025/02`, etc.
 -- `final_grade` -- `A`, `B+`, `B`, etc.
 CREATE TABLE enrollment (
-  academic_session    VARCHAR(10)     NOT NULL,
+  semester            VARCHAR(10)     NOT NULL,
   registration_date   DATETIME        NOT NULL,
   final_grade         CHAR(2)         NULL,
 
@@ -128,7 +128,7 @@ CREATE TABLE enrollment (
   FOREIGN KEY fk_course_course_code(course_code)
     REFERENCES course(course_code),
 
-  PRIMARY KEY (student_id, course_code, academic_session)
+  PRIMARY KEY (student_id, course_code, semester)
 );
 
 -- Create table `fee`.
