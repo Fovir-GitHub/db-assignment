@@ -56,6 +56,7 @@ CREATE TABLE programme (
     REFERENCES coordinator(coordinator_id)
 );
 
+-- Create table `semester`
 CREATE TABLE semester (
   year    INT   NOT NULL,
   month   INT   NOT NULL,
