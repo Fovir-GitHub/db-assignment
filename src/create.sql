@@ -163,6 +163,7 @@ CREATE TABLE fee (
     REFERENCES semester(year, month),
 
   payment_status  ENUM('Pending', 'Paid', 'Overdue') NOT NULL DEFAULT 'Pending',
+  payment_method  ENUM('Cash', 'QR', 'Card') NOT NULL DEFAULT 'Cash',
 
   PRIMARY KEY (student_id, semester_year, semester_month)
 );
