@@ -114,7 +114,7 @@ CREATE TABLE student (
   FOREIGN KEY fk_programme_programme_code(programme_code)
     REFERENCES programme(programme_code),
 
-  advisor_id      VARCHAR(16)     DEFAULT 'UNASSIGNED',
+  advisor_id      VARCHAR(16)     NULL,
   FOREIGN KEY fk_advisor_advisor_id(advisor_id)
     REFERENCES advisor(advisor_id)
 );
