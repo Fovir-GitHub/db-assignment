@@ -56,6 +56,12 @@ CREATE TABLE programme (
     REFERENCES coordinator(coordinator_id)
 );
 
+CREATE TABLE semester (
+  year    INT   NOT NULL,
+  month   INT   NOT NULL,
+  PRIMARY KEY (year, month)
+);
+
 -- Create table `course`.
 -- `course_code` -- `programme_code + year + incremental ID with a leading 0`.
 --                e.g. `CYS101`, `CST213`, etc.
@@ -63,7 +69,6 @@ CREATE TABLE course (
   course_code     VARCHAR(10)   PRIMARY KEY NOT NULL,
   title           VARCHAR(50)   NOT NULL,
   credit_hour     INT           NOT NULL,
-  semester        INT           NOT NULL,
   programme_code  VARCHAR(10)   NOT NULL,
   FOREIGN KEY fk_programme_programme_code(programme_code)
     REFERENCES programme(programme_code)
@@ -116,7 +121,6 @@ CREATE TABLE student (
 -- `semester` -- `year + intake month` like `2024/09`, `2025/02`, etc.
 -- `final_grade` -- `A`, `B+`, `B`, etc.
 CREATE TABLE enrollment (
-  semester            VARCHAR(10)     NOT NULL,
   registration_date   DATETIME        NOT NULL,
   final_grade         CHAR(2)         NULL,
 
@@ -128,7 +132,11 @@ CREATE TABLE enrollment (
   FOREIGN KEY fk_course_course_code(course_code)
     REFERENCES course(course_code),
 
-  PRIMARY KEY (student_id, course_code, semester)
+  semester_year       INT             NOT NULL,
+  semester_month      INT             NOT NULL,
+  FOREIGN KEY fk_semester_year_month(semester_year, semester_month)
+    REFERENCES semester(year, month),
+  PRIMARY KEY (student_id, course_code, semester_year, semester_month)
 );
 
 -- Create table `fee`.
