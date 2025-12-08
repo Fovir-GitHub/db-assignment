@@ -106,14 +106,14 @@ CREATE TABLE student (
     REFERENCES person(id),
 
   cgpa            DECIMAL(10, 2)  DEFAULT 0,
-  status          VARCHAR(10)     DEFAULT 'active',
+  status          ENUM('active', 'deferred', 'graduated') DEFAULT 'active',
   level           VARCHAR(10)     DEFAULT 'Year 1',
 
   programme_code  VARCHAR(10)     NOT NULL,
   FOREIGN KEY fk_programme_programme_code(programme_code)
     REFERENCES programme(programme_code),
 
-  advisor_id      VARCHAR(16)     NOT NULL,
+  advisor_id      VARCHAR(16)     DEFAULT 'UNASSIGNED',
   FOREIGN KEY fk_advisor_advisor_id(advisor_id)
     REFERENCES advisor(advisor_id)
 );
