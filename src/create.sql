@@ -142,7 +142,6 @@ CREATE TABLE enrollment (
 
 -- Create table `fee`.
 CREATE TABLE fee (
-  invoice_id      INT             PRIMARY KEY AUTO_INCREMENT,
   student_id      VARCHAR(16)     NOT NULL,
   FOREIGN KEY fk_student_student_id(student_id)
     REFERENCES student(student_id),
@@ -150,8 +149,15 @@ CREATE TABLE fee (
   total_credit    INT             NOT NULL DEFAULT 0,
   total_fee       DECIMAL(10, 2)  NOT NULL DEFAULT 0,
   discount        DECIMAL(10, 2)  NOT NULL DEFAULT 0,
-  semester        INT             NOT NULL,
-  payment_status  ENUM('Pending', 'Paid', 'Overdue')
+
+  semester_year   INT             NOT NULL,
+  semester_month  INT             NOT NULL,
+  FOREIGN KEY fk_semester_year_month(semester_year, semester_month)
+    REFERENCES semester(year, month),
+
+  payment_status  ENUM('Pending', 'Paid', 'Overdue'),
+
+  PRIMARY KEY (student_id, semester_year, semester_month)
 );
 
 DELIMITER $$
