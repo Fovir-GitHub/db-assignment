@@ -72,7 +72,12 @@ CREATE TABLE course (
   credit_hour     INT           NOT NULL,
   programme_code  VARCHAR(10)   NOT NULL,
   FOREIGN KEY fk_programme_programme_code(programme_code)
-    REFERENCES programme(programme_code)
+    REFERENCES programme(programme_code),
+
+  semester_year   INT           NOT NULL,
+  semester_month  INT           NOT NULL,
+  FOREIGN KEY fk_semester_year_month(semester_year, semester_month)
+    REFERENCES semester(year, month)
 );
 
 -- Create table `course_prerequisite`.
