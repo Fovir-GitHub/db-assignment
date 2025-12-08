@@ -150,6 +150,7 @@ CREATE TABLE fee (
   total_credit    INT             NOT NULL DEFAULT 0,
   total_fee       DECIMAL(10, 2)  NOT NULL DEFAULT 0,
   discount        DECIMAL(10, 2)  NOT NULL DEFAULT 0,
+  date            DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
   semester_year   INT             NOT NULL,
   semester_month  INT             NOT NULL,
