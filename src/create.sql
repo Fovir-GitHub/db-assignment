@@ -132,7 +132,7 @@ CREATE TABLE student (
 
   advisor_id      VARCHAR(16)     NULL,
   FOREIGN KEY fk_advisor_advisor_id(advisor_id)
-    REFERENCES advisor(advisor_id)
+    REFERENCES person(id)
 );
 
 -- Create table `enrollment`.
