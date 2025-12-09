@@ -137,7 +137,8 @@ CREATE TABLE student (
 -- `semester` -- `year + intake month` like `2024/09`, `2025/02`, etc.
 -- `final_grade` -- `A`, `B+`, `B`, etc.
 CREATE TABLE enrollment (
-  registration_date   DATETIME        NOT NULL,
+  id                  INT             PRIMARY KEY AUTO_INCREMENT,
+  registration_date   DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP,
   final_grade         CHAR(2)         NULL,
 
   student_id          VARCHAR(16)     NOT NULL,
@@ -151,8 +152,7 @@ CREATE TABLE enrollment (
   semester_year       INT             NOT NULL,
   semester_month      INT             NOT NULL,
   FOREIGN KEY fk_semester_year_month(semester_year, semester_month)
-    REFERENCES semester(year, month),
-  PRIMARY KEY (student_id, course_code, semester_year, semester_month)
+    REFERENCES semester(year, month)
 );
 
 -- Create table `fee`.
