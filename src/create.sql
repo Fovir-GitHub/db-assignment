@@ -43,6 +43,13 @@ CREATE TABLE coordinator (
   qualification     VARCHAR(50)   NOT NULL
 );
 
+-- Create table `advisor`.
+CREATE TABLE advisor (
+  advisor_id  VARCHAR(16)   PRIMARY KEY NOT NULL,
+  FOREIGN KEY fk_staff_staff_id(advisor_id)
+    REFERENCES staff(staff_id)
+);
+
 -- Create table `programme`.
 -- `programme_code` -- Abbreviation of programme name like `CYS`, `CST`, etc.
 CREATE TABLE programme (
@@ -91,13 +98,6 @@ CREATE TABLE course_prerequisite (
     REFERENCES course(course_code),
 
   PRIMARY KEY (course_code, prerequisite_code)
-);
-
--- Create table `advisor`.
-CREATE TABLE advisor (
-  advisor_id  VARCHAR(16)   PRIMARY KEY NOT NULL,
-  FOREIGN KEY fk_staff_staff_id(advisor_id)
-    REFERENCES staff(staff_id)
 );
 
 -- Create table `student`.
