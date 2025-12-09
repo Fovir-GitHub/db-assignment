@@ -137,7 +137,7 @@ CREATE TABLE student (
 -- `semester` -- `year + intake month` like `2024/09`, `2025/02`, etc.
 -- `final_grade` -- `A`, `B+`, `B`, etc.
 CREATE TABLE enrollment (
-  id                  INT             PRIMARY KEY AUTO_INCREMENT,
+  enrollment_id       INT             PRIMARY KEY AUTO_INCREMENT,
   registration_date   DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP,
   final_grade         CHAR(2)         NULL,
 
