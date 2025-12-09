@@ -100,6 +100,17 @@ CREATE TABLE course_prerequisite (
   PRIMARY KEY (course_code, prerequisite_code)
 );
 
+-- Create table `lecturer`.
+CREATE TABLE lecturer (
+  lecturer_id   VARCHAR(16)   PRIMARY KEY NOT NULL,
+  FOREIGN KEY fk_staff_staff_id(lecturer_id)
+    REFERENCES staff(staff_id),
+
+  course_code   VARCHAR(10)   NOT NULL,
+  FOREIGN KEY fk_course_course_code(course_code)
+    REFERENCES course(course_code)
+);
+
 -- Create table `student`.
 -- `student_id` -- `programme code + intake year + semester + incremental ID`.
 --              e.g. `CYS2809001`, `CYS2704010`, etc.
