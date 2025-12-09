@@ -1,6 +1,3 @@
--- TODO:
---  - Refactor the structure of database.
-
 -- Create and switch to the database
 -- after dropping the existed one.
 DROP DATABASE IF EXISTS enrollment_system;
@@ -21,7 +18,7 @@ CREATE TABLE person (
   contact_number  VARCHAR(11)     NULL
 );
 
--- Create table `staff` to be the superclass of `advisor` and `coordinator`.
+-- Create table `staff` to be the superclass of `advisor`, `lecturer`, and `coordinator`.
 -- `staff_id` -- `S + programme code + start year + incremental ID`.
 --                e.g. `SCYS2012001`, `SCYS2013010`, etc.
 CREATE TABLE staff (
