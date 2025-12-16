@@ -100,13 +100,15 @@ CREATE TABLE course_prerequisite (
 
 -- Create table `lecturer`.
 CREATE TABLE lecturer (
-  lecturer_id   VARCHAR(16)   PRIMARY KEY NOT NULL,
+  lecturer_id   VARCHAR(16)   NOT NULL,
   FOREIGN KEY fk_staff_staff_id(lecturer_id)
     REFERENCES staff(staff_id),
 
   course_code   VARCHAR(10)   NOT NULL,
   FOREIGN KEY fk_course_course_code(course_code)
-    REFERENCES course(course_code)
+    REFERENCES course(course_code),
+
+  PRIMARY KEY (lecturer_id, course_code)
 );
 
 -- Create table `student`.
