@@ -141,11 +141,11 @@ INSERT INTO enrollment (student_id, course_code, semester_year, semester_month, 
 
 INSERT INTO fee (student_id, total_credit, total_fee, discount, semester_year, semester_month, payment_status, payment_method) VALUES
 ('CYS2809001', 6, 3000, 0, 2024, 5, 'Paid', 'Card'),
-('CYS2809002', 6, 3000, 100, 2024, 5, 'Paid', 'Cash'),
-('CYS2809003', 6, 3000, 200, 2024, 5, 'Pending', 'QR'),
+('CYS2809002', 6, 3000, 1, 2024, 5, 'Paid', 'Cash'),
+('CYS2809003', 6, 3000, 0.3, 2024, 5, 'Pending', 'QR'),
 ('CYS2809004', 6, 3000, 0, 2024, 5, 'Overdue', 'Card'),
 ('CYS2809005', 3, 1500, 0, 2024, 9, 'Pending', 'Cash'),
 ('CST2809001', 3, 1500, 0,   2024, 1, 'Paid',    'QR'),
-('CIT2809001', 3, 1500, 50,  2024, 1, 'Paid',    'Card'),
+('CIT2809001', 3, 1500, 0.5,  2024, 1, 'Paid',    'Card'),
 ('SWE2809001',  3, 1500, 0,   2024, 1, 'Pending', 'Cash'),
 ('CYS2809001', 3, 1500, 0,   2024, 9, 'Paid',    'Card');
