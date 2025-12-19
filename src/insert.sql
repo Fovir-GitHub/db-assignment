@@ -1,9 +1,12 @@
 INSERT INTO person (id, firstname, lastname, birth_date, home_street, home_city, home_postcode, contact_number) VALUES
+('CIT2809001', 'Bella', 'Chua', '2005-07-18', '17 Jalan Q', 'Petaling Jaya', '46100', '0123456711'),
+('CST2809001', 'Aaron', 'Low', '2005-02-12', '16 Jalan P', 'Kuala Lumpur', '50100', '0123456710'),
 ('CYS2809001', 'Alice', 'Tan', '2005-04-15', '1 Jalan A', 'Kuala Lumpur', '50000', '0123456789'),
 ('CYS2809002', 'Bob', 'Lee', '2004-11-22', '2 Jalan B', 'Petaling Jaya', '46000', '0123456790'),
 ('CYS2809003', 'Charlie', 'Lim', '2005-06-10', '3 Jalan C', 'Kuala Lumpur', '50010', '0123456791'),
 ('CYS2809004', 'David', 'Ng', '2005-08-05', '4 Jalan D', 'Shah Alam', '40000', '0123456792'),
 ('CYS2809005', 'Eva', 'Wong', '2004-12-30', '5 Jalan E', 'Kuala Lumpur', '50020', '0123456793'),
+('SWE2809001',  'Chris', 'Ong', '2005-10-03', '18 Jalan R', 'Shah Alam', '40100', '0123456712'),
 ('SCYS2012001', 'Frank', 'Cheah', '1980-01-15', '6 Jalan F', 'Kuala Lumpur', '50030', '0123456794'),
 ('SCYS2012002', 'Grace', 'Ho', '1985-03-22', '7 Jalan G', 'Petaling Jaya', '46010', '0123456795'),
 ('SCYS2012003', 'Henry', 'Chong', '1978-07-10', '8 Jalan H', 'Kuala Lumpur', '50040', '0123456796'),
@@ -14,9 +17,6 @@ INSERT INTO person (id, firstname, lastname, birth_date, home_street, home_city,
 ('SCYS2013003', 'Mia', 'Ng', '1983-02-10', '13 Jalan M', 'Kuala Lumpur', '50070', '0123456701'),
 ('SCYS2013004', 'Nick', 'Wong', '1986-11-05', '14 Jalan N', 'Shah Alam', '40020', '0123456702'),
 ('SCYS2013005', 'Olivia', 'Lee', '1992-12-30', '15 Jalan O', 'Kuala Lumpur', '50080', '0123456703'),
-('CST2809001', 'Aaron', 'Low', '2005-02-12', '16 Jalan P', 'Kuala Lumpur', '50100', '0123456710'),
-('CIT2809001', 'Bella', 'Chua', '2005-07-18', '17 Jalan Q', 'Petaling Jaya', '46100', '0123456711'),
-('SWE2809001',  'Chris', 'Ong', '2005-10-03', '18 Jalan R', 'Shah Alam', '40100', '0123456712'),
 ('SCYS2014001', 'Daniel', 'Foo', '1987-03-14', '19 Jalan S', 'Kuala Lumpur', '50200', '0123456713'),
 ('SCYS2014002', 'Emily', 'Goh', '1989-09-09', '20 Jalan T', 'Petaling Jaya', '46200', '0123456714');
 
