@@ -1,12 +1,17 @@
 INSERT INTO person (id, firstname, lastname, birth_date, home_street, home_city, home_postcode, contact_number) VALUES
 ('CIT2809001', 'Bella', 'Chua', '2005-07-18', '17 Jalan Q', 'Petaling Jaya', '46100', '0123456711'),
+('CIT2809002', 'Jack', 'Wong', '2005-05-10', '20 Jalan T', 'Kuala Lumpur', '50092', '0123456708'),
+('CIT2809003', 'Kelly', 'Ho', '2004-12-03', '21 Jalan U', 'Petaling Jaya', '46040', '0123456709'),
 ('CST2809001', 'Aaron', 'Low', '2005-02-12', '16 Jalan P', 'Kuala Lumpur', '50100', '0123456710'),
+('CST2809002', 'Hannah', 'Lee', '2005-06-25', '18 Jalan R', 'Kuala Lumpur', '50091', '0123456706'),
+('CST2809003', 'Ian', 'Ng', '2004-08-12', '19 Jalan S', 'Shah Alam', '40030', '0123456707'),
 ('CYS2809001', 'Alice', 'Tan', '2005-04-15', '1 Jalan A', 'Kuala Lumpur', '50000', '0123456789'),
 ('CYS2809002', 'Bob', 'Lee', '2004-11-22', '2 Jalan B', 'Petaling Jaya', '46000', '0123456790'),
 ('CYS2809003', 'Charlie', 'Lim', '2005-06-10', '3 Jalan C', 'Kuala Lumpur', '50010', '0123456791'),
 ('CYS2809004', 'David', 'Ng', '2005-08-05', '4 Jalan D', 'Shah Alam', '40000', '0123456792'),
 ('CYS2809005', 'Eva', 'Wong', '2004-12-30', '5 Jalan E', 'Kuala Lumpur', '50020', '0123456793'),
-('SWE2809001',  'Chris', 'Ong', '2005-10-03', '18 Jalan R', 'Shah Alam', '40100', '0123456712'),
+('CYS2809006', 'Fiona', 'Lim', '2005-02-14', '16 Jalan P', 'Kuala Lumpur', '50090', '0123456704'),
+('CYS2809007', 'George', 'Tan', '2004-03-20', '17 Jalan Q', 'Petaling Jaya', '46030', '0123456705'),
 ('SCYS2012001', 'Frank', 'Cheah', '1980-01-15', '6 Jalan F', 'Kuala Lumpur', '50030', '0123456794'),
 ('SCYS2012002', 'Grace', 'Ho', '1985-03-22', '7 Jalan G', 'Petaling Jaya', '46010', '0123456795'),
 ('SCYS2012003', 'Henry', 'Chong', '1978-07-10', '8 Jalan H', 'Kuala Lumpur', '50040', '0123456796'),
@@ -18,7 +23,10 @@ INSERT INTO person (id, firstname, lastname, birth_date, home_street, home_city,
 ('SCYS2013004', 'Nick', 'Wong', '1986-11-05', '14 Jalan N', 'Shah Alam', '40020', '0123456702'),
 ('SCYS2013005', 'Olivia', 'Lee', '1992-12-30', '15 Jalan O', 'Kuala Lumpur', '50080', '0123456703'),
 ('SCYS2014001', 'Daniel', 'Foo', '1987-03-14', '19 Jalan S', 'Kuala Lumpur', '50200', '0123456713'),
-('SCYS2014002', 'Emily', 'Goh', '1989-09-09', '20 Jalan T', 'Petaling Jaya', '46200', '0123456714');
+('SCYS2014002', 'Emily', 'Goh', '1989-09-09', '20 Jalan T', 'Petaling Jaya', '46200', '0123456714'),
+('SWE2809001',  'Chris', 'Ong', '2005-10-03', '18 Jalan R', 'Shah Alam', '40100', '0123456712'),
+('SWE2809002', 'Liam', 'Chong', '2005-04-18', '22 Jalan V', 'Kuala Lumpur', '50093', '0123456710'),
+('SWE2809003', 'Mia', 'Koh', '2004-11-29', '23 Jalan W', 'Shah Alam', '40040', '0123456711');
 
 INSERT INTO staff (staff_id, department, office_location) VALUES
 ('SCYS2012001', 'Computer Science', 'Block A, Room 101'),
@@ -132,14 +140,22 @@ INSERT INTO lecturer (lecturer_id, course_code) VALUES
 ('SCYS2014002', 'SWE201');
 
 INSERT INTO student (student_id, cgpa, status, level, programme_code, advisor_id) VALUES
+('CIT2809001', 3.40, 'active', 'Year 1', 'CIT', 'SCYS2014001'),
+('CIT2809002', 3.10, 'active', 'Year 1', 'CIT', 'SCYS2014001'),
+('CIT2809003', 3.55, 'active', 'Year 2', 'CIT', 'SCYS2014002'),
+('CST2809001', 3.10, 'active', 'Year 1', 'CST', 'SCYS2014001'),
+('CST2809002', 3.25, 'active', 'Year 1', 'CST', 'SCYS2014001'),
+('CST2809003', 3.60, 'active', 'Year 2', 'CST', 'SCYS2014002'),
 ('CYS2809001', 3.50, 'active', 'Year 1', 'CYS', 'SCYS2013001'),
 ('CYS2809002', 3.20, 'active', 'Year 1', 'CYS', 'SCYS2013002'),
 ('CYS2809003', 3.80, 'active', 'Year 2', 'CYS', 'SCYS2013003'),
 ('CYS2809004', 2.90, 'active', 'Year 2', 'CYS', 'SCYS2013004'),
 ('CYS2809005', 3.60, 'active', 'Year 3', 'CYS', 'SCYS2013005'),
-('CST2809001', 3.10, 'active', 'Year 1', 'CST', 'SCYS2014001'),
-('CIT2809001', 3.40, 'active', 'Year 1', 'CIT', 'SCYS2014001'),
-('SWE2809001',  3.00, 'active', 'Year 1', 'SWE',  'SCYS2014002');
+('CYS2809006', 3.70, 'active', 'Year 1', 'CYS', 'SCYS2013001'),
+('CYS2809007', 2.85, 'active', 'Year 2', 'CYS', 'SCYS2013002'),
+('SWE2809001', 3.00, 'active', 'Year 1', 'SWE', 'SCYS2014002'),
+('SWE2809002', 3.20, 'active', 'Year 1', 'SWE', 'SCYS2014002'),
+('SWE2809003', 3.75, 'active', 'Year 2', 'SWE', 'SCYS2014002');
 
 INSERT INTO enrollment (student_id, course_code, semester_year, semester_month, final_grade) VALUES
 ('CYS2809001', 'CYS101', 2024, 1, 'A'),
@@ -158,12 +174,20 @@ INSERT INTO enrollment (student_id, course_code, semester_year, semester_month, 
 ('SWE2809001',  'SWE101',  2024, 1, 'B');
 
 INSERT INTO fee (student_id, total_credit, total_fee, discount, semester_year, semester_month, payment_status, payment_method) VALUES
-('CYS2809001', 6, 3000, 0, 2024, 5, 'Paid', 'Card'),
+('CIT2809001', 3, 1500, 0.5, 2024, 1, 'Paid', 'Card'),
+('CIT2809002', 3, 1500, 0, 2024, 5, 'Pending', 'QR'),
+('CIT2809003', 6, 3000, 0.3, 2024, 9, 'Paid', 'Card'),
+('CST2809001', 3, 1500, 0, 2024, 1, 'Paid', 'QR'),
+('CST2809002', 3, 1500, 0.2, 2024, 5, 'Paid', 'Cash'),
+('CST2809003', 6, 3000, 0, 2024, 9, 'Overdue', 'Card'),
+('CYS2809001', 3, 1500, 0, 2024, 9, 'Overdue', 'Card'),
+('CYS2809001', 6, 3000, 0, 2024, 5, 'Overdue', 'Card'),
 ('CYS2809002', 6, 3000, 1, 2024, 5, 'Paid', 'Cash'),
 ('CYS2809003', 6, 3000, 0.3, 2024, 5, 'Pending', 'QR'),
 ('CYS2809004', 6, 3000, 0, 2024, 5, 'Overdue', 'Card'),
 ('CYS2809005', 3, 1500, 0, 2024, 9, 'Pending', 'Cash'),
-('CST2809001', 3, 1500, 0,   2024, 1, 'Paid',    'QR'),
-('CIT2809001', 3, 1500, 0.5,  2024, 1, 'Paid',    'Card'),
-('SWE2809001',  3, 1500, 0,   2024, 1, 'Pending', 'Cash'),
-('CYS2809001', 3, 1500, 0,   2024, 9, 'Paid',    'Card');
+('CYS2809006', 6, 3000, 0.1, 2024, 5, 'Paid', 'Card'),
+('CYS2809007', 6, 3000, 0, 2024, 9, 'Pending', 'QR'),
+('SWE2809001', 3, 1500, 0, 2024, 1, 'Pending', 'Cash'),
+('SWE2809002', 3, 1500, 0, 2024, 5, 'Paid', 'Cash'),
+('SWE2809003', 6, 3000, 0.15,2024, 9, 'Pending', 'QR');
