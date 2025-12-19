@@ -16,7 +16,7 @@ INSERT INTO person (id, firstname, lastname, birth_date, home_street, home_city,
 ('SCYS2013005', 'Olivia', 'Lee', '1992-12-30', '15 Jalan O', 'Kuala Lumpur', '50080', '0123456703'),
 ('CST2809001', 'Aaron', 'Low', '2005-02-12', '16 Jalan P', 'Kuala Lumpur', '50100', '0123456710'),
 ('CIT2809001', 'Bella', 'Chua', '2005-07-18', '17 Jalan Q', 'Petaling Jaya', '46100', '0123456711'),
-('SE2809001',  'Chris', 'Ong', '2005-10-03', '18 Jalan R', 'Shah Alam', '40100', '0123456712'),
+('SWE2809001',  'Chris', 'Ong', '2005-10-03', '18 Jalan R', 'Shah Alam', '40100', '0123456712'),
 ('SCYS2014001', 'Daniel', 'Foo', '1987-03-14', '19 Jalan S', 'Kuala Lumpur', '50200', '0123456713'),
 ('SCYS2014002', 'Emily', 'Goh', '1989-09-09', '20 Jalan T', 'Petaling Jaya', '46200', '0123456714');
 
@@ -54,7 +54,7 @@ INSERT INTO programme (programme_code, name, faculty, duration, coordinator_id) 
 ('CYS', 'Cybersecurity', 'Faculty of IT', 4, 'SCYS2012003'),
 ('CST', 'Computer Science', 'Faculty of Computing', 4, 'SCYS2012001'),
 ('CIT', 'Information Technology', 'Faculty of IT', 4, 'SCYS2012002'),
-('SE', 'Software Engineering', 'Faculty of Computing', 4, 'SCYS2012004');
+('SWE', 'Software Engineering', 'Faculty of Computing', 4, 'SCYS2012004');
 
 INSERT INTO semester (year, month) VALUES
 (2024, 1), (2024, 5), (2024, 9),
@@ -73,13 +73,13 @@ INSERT INTO course (course_code, title, credit_hour, programme_code, semester_ye
 ('CIT101', 'IT Fundamentals', 3, 'CIT', 2024, 1),
 ('CIT102', 'Database Systems', 3, 'CIT', 2024, 5),
 ('CIT103', 'Web Development', 3, 'CIT', 2024, 9),
-('SE101', 'Software Engineering Basics', 3, 'SE', 2024, 1),
-('SE102', 'Software Design', 3, 'SE', 2024, 5),
-('SE103', 'Software Testing', 3, 'SE', 2024, 9),
+('SWE101', 'Software Engineering Basics', 3, 'SWE', 2024, 1),
+('SWE102', 'Software Design', 3, 'SWE', 2024, 5),
+('SWE103', 'Software Testing', 3, 'SWE', 2024, 9),
 ('CYS201', 'Ethical Hacking', 3, 'CYS', 2025, 1),
 ('CST201', 'Operating Systems', 3, 'CST', 2025, 1),
 ('CIT201', 'Advanced Databases', 3, 'CIT', 2025, 1),
-('SE201',  'Software Architecture', 3, 'SE',  2025, 1);
+('SWE201',  'Software Architecture', 3, 'SWE',  2025, 1);
 
 INSERT INTO course_prerequisite (course_code, prerequisite_code) VALUES
 ('CYS102', 'CYS101'),
@@ -88,12 +88,12 @@ INSERT INTO course_prerequisite (course_code, prerequisite_code) VALUES
 ('CST103', 'CST102'),
 ('CIT102', 'CIT101'),
 ('CIT103', 'CIT102'),
-('SE102', 'SE101'),
-('SE103', 'SE102'),
+('SWE102', 'SWE101'),
+('SWE103', 'SWE102'),
 ('CYS201', 'CYS103'),
 ('CST201', 'CST103'),
 ('CIT201', 'CIT103'),
-('SE201',  'SE103');
+('SWE201',  'SWE103');
 
 INSERT INTO lecturer (lecturer_id, course_code) VALUES
 ('SCYS2012003', 'CYS101'),
@@ -105,13 +105,13 @@ INSERT INTO lecturer (lecturer_id, course_code) VALUES
 ('SCYS2012002', 'CIT101'),
 ('SCYS2013004', 'CIT102'),
 ('SCYS2013005', 'CIT103'),
-('SCYS2012004', 'SE101'),
-('SCYS2012005', 'SE102'),
-('SCYS2013003', 'SE103'),
+('SCYS2012004', 'SWE101'),
+('SCYS2012005', 'SWE102'),
+('SCYS2013003', 'SWE103'),
 ('SCYS2014001', 'CYS201'),
 ('SCYS2012001', 'CST201'),
 ('SCYS2013004', 'CIT201'),
-('SCYS2014002', 'SE201');
+('SCYS2014002', 'SWE201');
 
 INSERT INTO student (student_id, cgpa, status, level, programme_code, advisor_id) VALUES
 ('CYS2809001', 3.50, 'active', 'Year 1', 'CYS', 'SCYS2013001'),
@@ -121,7 +121,7 @@ INSERT INTO student (student_id, cgpa, status, level, programme_code, advisor_id
 ('CYS2809005', 3.60, 'active', 'Year 3', 'CYS', 'SCYS2013005'),
 ('CST2809001', 3.10, 'active', 'Year 1', 'CST', 'SCYS2014001'),
 ('CIT2809001', 3.40, 'active', 'Year 1', 'CIT', 'SCYS2014001'),
-('SE2809001',  3.00, 'active', 'Year 1', 'SE',  'SCYS2014002');
+('SWE2809001',  3.00, 'active', 'Year 1', 'SWE',  'SCYS2014002');
 
 INSERT INTO enrollment (student_id, course_code, semester_year, semester_month, final_grade) VALUES
 ('CYS2809001', 'CYS101', 2024, 1, 'A'),
@@ -137,7 +137,7 @@ INSERT INTO enrollment (student_id, course_code, semester_year, semester_month, 
 ('CYS2809003', 'CYS103', 2024, 9, 'A'),
 ('CST2809001', 'CST101', 2024, 1, 'B+'),
 ('CIT2809001', 'CIT101', 2024, 1, 'A'),
-('SE2809001',  'SE101',  2024, 1, 'B');
+('SWE2809001',  'SWE101',  2024, 1, 'B');
 
 INSERT INTO fee (student_id, total_credit, total_fee, discount, semester_year, semester_month, payment_status, payment_method) VALUES
 ('CYS2809001', 6, 3000, 0, 2024, 5, 'Paid', 'Card'),
@@ -147,5 +147,5 @@ INSERT INTO fee (student_id, total_credit, total_fee, discount, semester_year, s
 ('CYS2809005', 3, 1500, 0, 2024, 9, 'Pending', 'Cash'),
 ('CST2809001', 3, 1500, 0,   2024, 1, 'Paid',    'QR'),
 ('CIT2809001', 3, 1500, 50,  2024, 1, 'Paid',    'Card'),
-('SE2809001',  3, 1500, 0,   2024, 1, 'Pending', 'Cash'),
+('SWE2809001',  3, 1500, 0,   2024, 1, 'Pending', 'Cash'),
 ('CYS2809001', 3, 1500, 0,   2024, 9, 'Paid',    'Card');
