@@ -38,12 +38,12 @@ SELECT CONCAT(p.firstname, ' ', p.lastname) AS 'Name',
 SELECT c.course_code AS 'Course Code',
        c.title AS 'Course Title',
        pc.count AS 'Number of Prerequisites'
-FROM (
-    SELECT course_code,
-           COUNT(*) AS count
-    FROM course_prerequisite
-    GROUP BY course_code
-) AS pc
-INNER JOIN course AS c ON c.course_code = pc.course_code
-HAVING pc.count > 1
-ORDER BY pc.count;
+  FROM (
+      SELECT course_code,
+             COUNT(*) AS count
+      FROM course_prerequisite
+      GROUP BY course_code
+  ) AS pc
+  INNER JOIN course AS c ON c.course_code = pc.course_code
+  HAVING pc.count > 1
+  ORDER BY pc.count;
