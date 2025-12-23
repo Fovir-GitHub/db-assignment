@@ -1,4 +1,4 @@
-SOURCE ./src/create.sql;
+-- SOURCE ./src/create.sql;
 
 INSERT INTO person (id, firstname, lastname, birth_date, home_street, home_city, home_postcode, contact_number) VALUES
 ('CIT2809001', 'Bella', 'Chua', '2005-07-18', '17 Jalan Q', 'Petaling Jaya', '46100', '0123456711'),
@@ -161,9 +161,11 @@ INSERT INTO student (student_id, cgpa, status, level, programme_code, advisor_id
 
 INSERT INTO enrollment (student_id, course_code, semester_year, semester_month, final_grade) VALUES
 ('CIT2809001', 'CIT101', 2024, 1, 'A'),
+('CIT2809002', 'CIT102', 2024, 5, 'B+'),
 ('CIT2809003', 'CIT103', 2024, 9, 'A-'),
 ('CIT2809003', 'CST103', 2024, 9, 'B+'),
 ('CST2809001', 'CST101', 2024, 1, 'B+'),
+('CST2809002', 'CST102', 2024, 5, 'B'),
 ('CST2809003', 'CST103', 2024, 9, 'A'),
 ('CST2809003', 'SWE103', 2024, 9, 'A'),
 ('CYS2809001', 'CYS101', 2024, 1, 'A'),
@@ -179,7 +181,10 @@ INSERT INTO enrollment (student_id, course_code, semester_year, semester_month, 
 ('CYS2809005', 'CYS103', 2024, 9, 'A'),
 ('CYS2809006', 'CIT102', 2024, 5, 'A-'),
 ('CYS2809006', 'CYS102', 2024, 5, 'B+'),
-('SWE2809001', 'SWE101', 2024, 1, 'B');
+('CYS2809007', 'CYS103', 2024, 9, 'B'),
+('SWE2809001', 'SWE101', 2024, 1, 'B'),
+('SWE2809002', 'SWE102', 2024, 5, 'A-'),
+('SWE2809003', 'SWE103', 2024, 9, 'A');
 
 INSERT INTO fee (student_id, total_credit, total_fee, discount, semester_year, semester_month, payment_status, payment_method) VALUES
 ('CIT2809001', 3, 600, 0.25, 2024, 1, 'Paid', 'Card'),
