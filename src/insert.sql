@@ -1,3 +1,5 @@
+SOURCE ./src/create.sql;
+
 INSERT INTO person (id, firstname, lastname, birth_date, home_street, home_city, home_postcode, contact_number) VALUES
 ('CIT2809001', 'Bella', 'Chua', '2005-07-18', '17 Jalan Q', 'Petaling Jaya', '46100', '0123456711'),
 ('CIT2809002', 'Jack', 'Wong', '2005-05-10', '20 Jalan T', 'Kuala Lumpur', '50092', '0123456708'),
@@ -180,20 +182,20 @@ INSERT INTO enrollment (student_id, course_code, semester_year, semester_month, 
 ('SWE2809001', 'SWE101', 2024, 1, 'B');
 
 INSERT INTO fee (student_id, total_credit, total_fee, discount, semester_year, semester_month, payment_status, payment_method) VALUES
-('CIT2809001', 3, 1500, 0.5, 2024, 1, 'Paid', 'Card'),
-('CIT2809002', 3, 1500, 0, 2024, 5, 'Pending', 'QR'),
-('CIT2809003', 6, 3000, 0.3, 2024, 9, 'Paid', 'Card'),
-('CST2809001', 3, 1500, 0, 2024, 1, 'Paid', 'QR'),
-('CST2809002', 3, 1500, 0.2, 2024, 5, 'Paid', 'Cash'),
-('CST2809003', 6, 3000, 0, 2024, 9, 'Overdue', 'Card'),
-('CYS2809001', 3, 1500, 0, 2024, 9, 'Overdue', 'Card'),
-('CYS2809001', 6, 3000, 0, 2024, 5, 'Overdue', 'Card'),
-('CYS2809002', 6, 3000, 1, 2024, 5, 'Paid', 'Cash'),
-('CYS2809003', 6, 3000, 0.3, 2024, 5, 'Pending', 'QR'),
-('CYS2809004', 6, 3000, 0, 2024, 5, 'Overdue', 'Card'),
-('CYS2809005', 3, 1500, 0, 2024, 9, 'Pending', 'Cash'),
-('CYS2809006', 6, 3000, 0.1, 2024, 5, 'Paid', 'Card'),
-('CYS2809007', 6, 3000, 0, 2024, 9, 'Pending', 'QR'),
-('SWE2809001', 3, 1500, 0, 2024, 1, 'Pending', 'Cash'),
-('SWE2809002', 3, 1500, 0, 2024, 5, 'Paid', 'Cash'),
-('SWE2809003', 6, 3000, 0.15,2024, 9, 'Pending', 'QR');
+('CIT2809001', 3, 600, 0.25, 2024, 1, 'Paid', 'Card'),
+('CIT2809002', 3, 600, 0, 2024, 5, 'Pending', 'QR'),
+('CIT2809003', 6, 1200, 0.3, 2024, 9, 'Paid', 'Card'),
+('CST2809001', 3, 600, 0, 2024, 1, 'Paid', 'QR'),
+('CST2809002', 3, 600, 0.2, 2024, 5, 'Paid', 'Cash'),
+('CST2809003', 6, 1200, 0, 2024, 9, 'Overdue', 'Card'),
+('CYS2809001', 3, 600, 0, 2024, 5, 'Overdue', 'Card'),
+('CYS2809001', 3, 600, 0, 2024, 9, 'Overdue', 'Card'),
+('CYS2809002', 3, 600, 0, 2024, 5, 'Paid', 'Cash'),
+('CYS2809003', 3, 600, 0.5, 2024, 5, 'Pending', 'QR'),
+('CYS2809004', 3, 600, 0, 2024, 5, 'Overdue', 'Card'),
+('CYS2809005', 3, 600, 0, 2024, 9, 'Pending', 'Cash'),
+('CYS2809006', 6, 1200, 0.1, 2024, 5, 'Paid', 'Card'),
+('CYS2809007', 3, 600, 0, 2024, 9, 'Pending', 'QR'),
+('SWE2809001', 3, 600, 0, 2024, 1, 'Pending', 'Cash'),
+('SWE2809002', 3, 600, 0, 2024, 5, 'Paid', 'Cash'),
+('SWE2809003', 3, 600, 0.15, 2024, 9, 'Pending', 'QR');
