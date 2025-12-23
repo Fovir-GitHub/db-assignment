@@ -158,20 +158,26 @@ INSERT INTO student (student_id, cgpa, status, level, programme_code, advisor_id
 ('SWE2809003', 3.75, 'active', 'Year 2', 'SWE', 'SCYS2014002');
 
 INSERT INTO enrollment (student_id, course_code, semester_year, semester_month, final_grade) VALUES
+('CIT2809001', 'CIT101', 2024, 1, 'A'),
+('CIT2809003', 'CIT103', 2024, 9, 'A-'),
+('CIT2809003', 'CST103', 2024, 9, 'B+'),
+('CST2809001', 'CST101', 2024, 1, 'B+'),
+('CST2809003', 'CST103', 2024, 9, 'A'),
+('CST2809003', 'SWE103', 2024, 9, 'A'),
 ('CYS2809001', 'CYS101', 2024, 1, 'A'),
 ('CYS2809001', 'CYS102', 2024, 5, 'B+'),
+('CYS2809001', 'CYS103', 2024, 9, 'A-'),
 ('CYS2809002', 'CYS101', 2024, 1, 'B'),
 ('CYS2809002', 'CYS102', 2024, 5, 'A-'),
 ('CYS2809003', 'CYS101', 2024, 1, 'A'),
 ('CYS2809003', 'CYS102', 2024, 5, 'A'),
+('CYS2809003', 'CYS103', 2024, 9, 'A'),
 ('CYS2809004', 'CYS101', 2024, 1, 'B+'),
 ('CYS2809004', 'CYS102', 2024, 5, 'B'),
 ('CYS2809005', 'CYS103', 2024, 9, 'A'),
-('CYS2809001', 'CYS103', 2024, 9, 'A-'),
-('CYS2809003', 'CYS103', 2024, 9, 'A'),
-('CST2809001', 'CST101', 2024, 1, 'B+'),
-('CIT2809001', 'CIT101', 2024, 1, 'A'),
-('SWE2809001',  'SWE101',  2024, 1, 'B');
+('CYS2809006', 'CIT102', 2024, 5, 'A-'),
+('CYS2809006', 'CYS102', 2024, 5, 'B+'),
+('SWE2809001', 'SWE101', 2024, 1, 'B');
 
 INSERT INTO fee (student_id, total_credit, total_fee, discount, semester_year, semester_month, payment_status, payment_method) VALUES
 ('CIT2809001', 3, 1500, 0.5, 2024, 1, 'Paid', 'Card'),
