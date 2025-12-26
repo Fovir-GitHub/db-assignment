@@ -121,6 +121,7 @@ CREATE TABLE student (
   FOREIGN KEY fk_person_id(student_id)
     REFERENCES person(id),
 
+  emergency_contact   VARCHAR(11) NOT NULL,
   cgpa            DECIMAL(10, 2)  DEFAULT 0,
   status          ENUM('active', 'deferred', 'graduated') DEFAULT 'active',
   level           VARCHAR(10)     DEFAULT 'Year 1',
