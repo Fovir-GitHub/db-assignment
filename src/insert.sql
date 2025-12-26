@@ -141,23 +141,23 @@ INSERT INTO lecturer (lecturer_id, course_code) VALUES
 ('SCYS2013004', 'CIT201'),
 ('SCYS2014002', 'SWE201');
 
-INSERT INTO student (student_id, cgpa, status, level, programme_code, advisor_id) VALUES
-('CIT2809001', 3.40, 'active', 'Year 1', 'CIT', 'SCYS2014001'),
-('CIT2809002', 3.10, 'active', 'Year 1', 'CIT', 'SCYS2014001'),
-('CIT2809003', 3.55, 'active', 'Year 2', 'CIT', 'SCYS2014002'),
-('CST2809001', 3.10, 'active', 'Year 1', 'CST', 'SCYS2014001'),
-('CST2809002', 3.25, 'active', 'Year 1', 'CST', 'SCYS2014001'),
-('CST2809003', 3.60, 'active', 'Year 2', 'CST', 'SCYS2014002'),
-('CYS2809001', 3.50, 'active', 'Year 1', 'CYS', 'SCYS2013001'),
-('CYS2809002', 3.20, 'active', 'Year 1', 'CYS', 'SCYS2013002'),
-('CYS2809003', 3.80, 'active', 'Year 2', 'CYS', 'SCYS2013003'),
-('CYS2809004', 2.90, 'active', 'Year 2', 'CYS', 'SCYS2013004'),
-('CYS2809005', 3.60, 'active', 'Year 3', 'CYS', 'SCYS2013005'),
-('CYS2809006', 3.70, 'active', 'Year 1', 'CYS', 'SCYS2013001'),
-('CYS2809007', 2.85, 'active', 'Year 2', 'CYS', 'SCYS2013002'),
-('SWE2809001', 3.00, 'active', 'Year 1', 'SWE', 'SCYS2014002'),
-('SWE2809002', 3.20, 'active', 'Year 1', 'SWE', 'SCYS2014002'),
-('SWE2809003', 3.75, 'active', 'Year 2', 'SWE', 'SCYS2014002');
+INSERT INTO student (student_id, cgpa, status, level, programme_code, advisor_id, emergency_contact) VALUES
+('CIT2809001', 3.40, 'active', 'Year 1', 'CIT', 'SCYS2014001', '01686579303'),
+('CIT2809002', 3.10, 'active', 'Year 1', 'CIT', 'SCYS2014001', '01119540831'),
+('CIT2809003', 3.55, 'active', 'Year 2', 'CIT', 'SCYS2014002', '01026855092'),
+('CST2809001', 3.10, 'active', 'Year 1', 'CST', 'SCYS2014001', '01796233790'),
+('CST2809002', 3.25, 'active', 'Year 1', 'CST', 'SCYS2014001', '01295310485'),
+('CST2809003', 3.60, 'active', 'Year 2', 'CST', 'SCYS2014002', '01262950628'),
+('CYS2809001', 3.50, 'active', 'Year 1', 'CYS', 'SCYS2013001', '01239670711'),
+('CYS2809002', 3.20, 'active', 'Year 1', 'CYS', 'SCYS2013002', '01149827706'),
+('CYS2809003', 3.80, 'active', 'Year 2', 'CYS', 'SCYS2013003', '01790779946'),
+('CYS2809004', 2.90, 'active', 'Year 2', 'CYS', 'SCYS2013004', '01110053353'),
+('CYS2809005', 3.60, 'active', 'Year 3', 'CYS', 'SCYS2013005', '01726600539'),
+('CYS2809006', 3.70, 'active', 'Year 1', 'CYS', 'SCYS2013001', '01795285932'),
+('CYS2809007', 2.85, 'active', 'Year 2', 'CYS', 'SCYS2013002', '01957970516'),
+('SWE2809001', 3.00, 'active', 'Year 1', 'SWE', 'SCYS2014002', '01585582861'),
+('SWE2809002', 3.20, 'active', 'Year 1', 'SWE', 'SCYS2014002', '01093349856'),
+('SWE2809003', 3.75, 'active', 'Year 2', 'SWE', 'SCYS2014002', '01634036506');
 
 INSERT INTO enrollment (student_id, course_code, semester_year, semester_month, final_grade) VALUES
 ('CIT2809001', 'CIT101', 2024, 1, 'A'),
