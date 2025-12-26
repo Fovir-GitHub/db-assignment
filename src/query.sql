@@ -1,5 +1,5 @@
--- SOURCE ./src/create.sql;
--- SOURCE ./src/insert.sql;
+SOURCE ./src/create.sql;
+SOURCE ./src/insert.sql;
 
 -- Query students who enrolled in `CYS103` in 2024/09 semester and their study level and final grades, ordered by the study level.
 SELECT stu.student_id AS 'Student ID',
@@ -17,10 +17,12 @@ SELECT stu.student_id AS 'Student ID',
 SELECT s.student_id AS 'Student ID',
   CONCAT(p.firstname, ' ', p.lastname) AS 'Name',
   f.payment_status AS 'Status',
-  CONCAT(f.semester_year, '/', LPAD(f.semester_month, 2, '0')) AS 'Semester'
+  CONCAT(f.semester_year, '/', LPAD(f.semester_month, 2, '0')) AS 'Semester',
+  p.contact_number AS 'Contact',
+  s.emergency_contact AS 'Emergency Contact'
   FROM student AS s
   INNER JOIN person AS p ON p.id = s.student_id
-  LEFT JOIN fee AS f ON f.student_id = s.student_id
+  INNER JOIN fee AS f ON f.student_id = s.student_id
   WHERE f.payment_status IS NULL OR f.payment_status != 'Paid';
 
 -- Find the final fee of students whose name starts with 'A' in each semester.
