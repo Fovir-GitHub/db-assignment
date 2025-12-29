@@ -64,7 +64,7 @@ CREATE TABLE programme (
 -- Create table `semester`
 CREATE TABLE semester (
   year    INT   NOT NULL,
-  month   INT   NOT NULL CHECK(month BETWEEN 1 AND 12),
+  month   INT   NOT NULL CHECK(month = 1 OR month = 5 OR month =9),
   PRIMARY KEY (year, month)
 );
 
