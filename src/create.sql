@@ -117,21 +117,21 @@ CREATE TABLE lecturer (
 -- `status` -- One of `active`, `deferred`, or `graduated`.
 -- `level` -- `Year 1`, `Year 2`, etc.
 CREATE TABLE student (
-  student_id      VARCHAR(16)     PRIMARY KEY NOT NULL,
+  student_id          VARCHAR(16)     PRIMARY KEY NOT NULL,
   FOREIGN KEY fk_person_id(student_id)
     REFERENCES person(id),
 
-  emergency_contact   VARCHAR(11) NOT NULL,
-  cgpa            DECIMAL(10, 2)  DEFAULT 0,
-  status          ENUM('active', 'deferred', 'graduated') DEFAULT 'active',
-  level           VARCHAR(10)     DEFAULT 'Year 1',
+  emergency_contact   VARCHAR(11)     NOT NULL,
+  cgpa                DECIMAL(10, 2)  DEFAULT 0,
+  status              ENUM('active', 'deferred', 'graduated') DEFAULT 'active',
+  level               VARCHAR(10)     DEFAULT 'Year 1',
   CHECK (level REGEXP '^Year \\d$'),
 
-  programme_code  VARCHAR(10)     NOT NULL,
+  programme_code      VARCHAR(10)     NOT NULL,
   FOREIGN KEY fk_programme_programme_code(programme_code)
     REFERENCES programme(programme_code),
 
-  advisor_id      VARCHAR(16)     NULL,
+  advisor_id          VARCHAR(16)     NULL,
   FOREIGN KEY fk_advisor_advisor_id(advisor_id)
     REFERENCES person(id)
 );
