@@ -62,8 +62,8 @@ INSERT INTO advisor (advisor_id, start_year) VALUES
 
 INSERT INTO programme (programme_code, name, faculty, duration, coordinator_id) VALUES
 ('CYS', 'Cybersecurity', 'Faculty of IT', 4, 'SCYS2012003'),
-('CST', 'Computer Science', 'Faculty of Computing', 4, 'SCYS2012001'),
-('CIT', 'Information Technology', 'Faculty of IT', 4, 'SCYS2012002'),
+('CST', 'Computer Science', 'Faculty of Computing', 5, 'SCYS2012001'),
+('CIT', 'Information Technology', 'Faculty of IT', 3, 'SCYS2012002'),
 ('SWE', 'Software Engineering', 'Faculty of Computing', 4, 'SCYS2012004');
 
 INSERT INTO semester (year, month) VALUES
