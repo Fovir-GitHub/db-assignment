@@ -31,18 +31,18 @@ INSERT INTO person (id, firstname, lastname, birth_date, home_street, home_city,
 ('SWE2409003', 'Mia', 'Koh', '2004-11-29', '23 Jalan W', 'Shah Alam', '40040', '0123456711');
 
 INSERT INTO staff (staff_id, department, office_location) VALUES
-('SCYS2012001', 'Computer Science', 'Block A, Room 101'),
-('SCYS2012002', 'Information Technology', 'Block B, Room 202'),
-('SCYS2012003', 'Cybersecurity', 'Block C, Room 303'),
-('SCYS2012004', 'Software Engineering', 'Block D, Room 404'),
-('SCYS2012005', 'Computer Science', 'Block E, Room 505'),
-('SCYS2013001', 'Information Technology', 'Block F, Room 101'),
-('SCYS2013002', 'Cybersecurity', 'Block G, Room 202'),
-('SCYS2013003', 'Software Engineering', 'Block H, Room 303'),
-('SCYS2013004', 'Computer Science', 'Block I, Room 404'),
-('SCYS2013005', 'Information Technology', 'Block J, Room 505'),
-('SCYS2014001', 'Cybersecurity', 'Block K, Room 101'),
-('SCYS2014002', 'Software Engineering', 'Block L, Room 202');
+('SCYS2012001', 'Computer Science', 'Block A1, Room 101'),
+('SCYS2012002', 'Information Technology', 'Block A1, Room 202'),
+('SCYS2012003', 'Cybersecurity', 'Block A2, Room 303'),
+('SCYS2012004', 'Software Engineering', 'Block A2, Room 404'),
+('SCYS2012005', 'Computer Science', 'Block A3, Room 505'),
+('SCYS2013001', 'Information Technology', 'Block A3, Room 101'),
+('SCYS2013002', 'Cybersecurity', 'Block A4, Room 202'),
+('SCYS2013003', 'Software Engineering', 'Block A4, Room 303'),
+('SCYS2013004', 'Computer Science', 'Block A5, Room 404'),
+('SCYS2013005', 'Information Technology', 'Block A5, Room 405'),
+('SCYS2014001', 'Cybersecurity', 'Block B1, Room 101'),
+('SCYS2014002', 'Software Engineering', 'Block B1, Room 202');
 
 INSERT INTO coordinator (coordinator_id, qualification) VALUES
 ('SCYS2012001', 'PhD in Computer Science'),
